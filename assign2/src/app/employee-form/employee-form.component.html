@@ -1,0 +1,48 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+  <mat-form-field appearance="outline">
+    <mat-label>First Name</mat-label>
+    <input matInput type="text" formControlName="first_name" />
+    <mat-error *ngIf="employeeForm.controls['first_name'].invalid && employeeForm.controls['first_name'].touched">
+      First name is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Last Name</mat-label>
+    <input matInput type="text" formControlName="last_name" />
+    <mat-error *ngIf="employeeForm.controls['last_name'].invalid && employeeForm.controls['last_name'].touched">
+      Last name is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    <mat-error *ngIf="employeeForm.controls['email'].invalid && employeeForm.controls['email'].touched">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+
+  <div class="form-actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid" style="background-color: green;">{{ employee ? 'Update' : 'Add' }}</button>
+    <button mat-raised-button color="warn" type="button" (click)="onCancel()" style="background-color: red;">Cancel</button>
+  </div>
+
+  <style>
+    .employee-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      width: 150px;
+    }
+  </style>
+</form>

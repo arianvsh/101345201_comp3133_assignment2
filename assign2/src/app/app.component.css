@@ -1,0 +1,28 @@
+.main {
+    margin: 20px;
+    padding: 50px;
+    border: 2px solid #374f60;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #F8F8F8;
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .toolbar {
+    background-color: #007acc;
+    color: #fff;
+    font-size: 24px;
+    height: 64px;
+    padding: 0 16px;
+    
+  }
+  
+ 
+  
+  .centered-text {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
